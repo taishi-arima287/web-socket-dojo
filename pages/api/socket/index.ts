@@ -1,6 +1,8 @@
 import { Server } from 'socket.io'
+import { NextApiRequest } from 'next'
+import { NextApiResponseWithSocket } from './types'
 
-const SocketHandler = (req: any, res: any) => {
+const SocketHandler = (req: NextApiRequest, res: NextApiResponseWithSocket) => {
   if (res.socket.server.io) {
     console.log('Socket is already running')
     res.end()

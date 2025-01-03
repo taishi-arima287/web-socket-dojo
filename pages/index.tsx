@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
-import io from 'socket.io-client'
+import io, { Socket } from 'socket.io-client'
 
-let socket: any
+// socketをグローバル変数として型付きで定義
+let socket: Socket | undefined
 
 export default function Home() {
   const [message, setMessage] = useState('')
   const [messages, setMessages] = useState<string[]>([])
 
   useEffect(() => {
-    // Socket.io初期化
     const initSocket = async () => {
       await fetch('/api/socket')
       socket = io()
@@ -18,15 +18,22 @@ export default function Home() {
       })
     }
 
-    initSocket()
+    // socketが未初期化の場合のみ初期化
+    if (!socket) {
+      initSocket()
+    }
 
+    // クリーンアップ関数
     return () => {
-      if (socket) socket.disconnect()
+      if (socket) {
+        socket.disconnect()
+        socket = undefined
+      }
     }
   }, [])
 
   const sendMessage = () => {
-    if (message.trim()) {
+    if (message.trim() && socket) {
       socket.emit('send-message', message)
       setMessage('')
     }
