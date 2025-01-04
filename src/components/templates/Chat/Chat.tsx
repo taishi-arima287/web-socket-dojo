@@ -3,6 +3,7 @@ import io, { Socket } from 'socket.io-client'
 import { Button } from '@/components/atoms/Button'
 import { TextBox } from '@/components/atoms/TextBox'
 import styles from './styles.module.css'
+import { MessageContainer } from '@/components/molecules/MessageContainer'
 
 // socketをグローバル変数として型付きで定義
 let socket: Socket | undefined
@@ -21,12 +22,10 @@ export const Chat = () => {
       })
     }
 
-    // socketが未初期化の場合のみ初期化
     if (!socket) {
       initSocket()
     }
 
-    // クリーンアップ関数
     return () => {
       if (socket) {
         socket.disconnect()
@@ -46,16 +45,9 @@ export const Chat = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>WebSocketチャットデモ</h1>
       
-      <div className={styles.messageContainer}>
-        {messages.map((msg, i) => (
-          <div 
-            key={i} 
-            className={styles.message}
-          >
-            {msg}
-          </div>
-        ))}
-      </div>
+      <MessageContainer 
+        messages={messages.map((content, id) => ({ id, content }))} 
+      />
 
       <div className={styles.inputContainer}>
         <div className={styles.inputWrapper}>
