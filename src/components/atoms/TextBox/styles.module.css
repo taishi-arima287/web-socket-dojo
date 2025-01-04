@@ -1,0 +1,25 @@
+.module {
+  padding: 8px 16px;
+  font-size: 18px;
+  border: 2px solid #1d6cff;
+  border-radius: 3em;
+  color: #333;
+  background: #fff;
+  width: 300px;
+  height: 40px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.module:hover {
+  border-color: #0047cc;
+}
+
+.module:focus {
+  border-color: #0047cc;
+  box-shadow: 0 0 0 2px rgba(29, 108, 255, 0.2);
+}
+
+.module::placeholder {
+  color: #9fa5b1;
+} 

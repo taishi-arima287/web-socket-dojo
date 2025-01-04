@@ -1,0 +1,20 @@
+.module {
+  padding: 8px 4px;
+  font-size: 18px;
+  border: 0;
+  border-radius: 3em;
+  color: #fff;
+  background: #1d6cff;
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+}
+
+.module:hover {
+  background: #0047cc;
+}
+
+.module[disabled] {
+  pointer-events: none;
+  background-color: #9fa5b1;
+}
