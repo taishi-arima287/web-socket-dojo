@@ -42,28 +42,30 @@ export const Chat = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>WebSocketチャットデモ</h1>
-      
-      <MessageContainer 
-        messages={messages.map((content, id) => ({ id, content }))} 
-      />
+    <main>
+      <div className={styles.container}>
+        <h1 className={styles.title}>WebSocketチャットデモ</h1>
+        
+        <MessageContainer 
+          messages={messages.map((content, id) => ({ id, content }))} 
+        />
 
-      <div className={styles.inputContainer}>
-        <div className={styles.inputWrapper}>
-          <TextBox
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="メッセージを入力"
-          />
+        <div className={styles.inputContainer}>
+          <div className={styles.inputWrapper}>
+            <TextBox
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="メッセージを入力"
+            />
+          </div>
+          <Button
+            onClick={sendMessage}
+            className="bg-blue-500 text-white"
+          >
+            送信
+          </Button>
         </div>
-        <Button
-          onClick={sendMessage}
-          className="bg-blue-500 text-white"
-        >
-          送信
-        </Button>
       </div>
-    </div>
+    </main>
   )
 }

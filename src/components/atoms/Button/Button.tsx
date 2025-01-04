@@ -15,6 +15,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      role="button"
       onClick={onClick}
       disabled={disabled}
       className={`${styles.module} ${className}`}

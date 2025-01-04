@@ -15,20 +15,22 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
   args: {
-    children: '送信',
+    children: '送信する',
+    onClick: () => {},
   },
 };
 
 export const Disabled: Story = {
   args: {
-    children: '送信',
+    children: '送信する',
+    onClick: () => {},
     disabled: true,
   },
 };
 
 export const CustomClass: Story = {
   args: {
-    children: '送信',
+    children: '送信する',
     className: 'bg-green-500',
   },
 };

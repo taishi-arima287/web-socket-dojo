@@ -16,9 +16,11 @@ export const TextBox = ({
   return (
     <input
       type="text"
+      role="textbox"
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      aria-label={placeholder}
       className={`${styles.module} ${className}`}
     />
   );
