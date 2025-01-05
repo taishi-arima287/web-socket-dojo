@@ -3,20 +3,20 @@ import { render } from "@testing-library/react";
 import { Chat } from "./Chat";
 
 // socket.io-clientのモックを修正
-jest.mock('socket.io-client', () => {
+jest.mock("socket.io-client", () => {
   const socket = {
     on: jest.fn(),
     emit: jest.fn(),
-    disconnect: jest.fn()
+    disconnect: jest.fn(),
   };
   return jest.fn(() => socket);
 });
 
 // fetchのモック
-global.fetch = jest.fn(() => 
+global.fetch = jest.fn(() =>
   Promise.resolve({
     ok: true,
-    json: () => Promise.resolve({})
+    json: () => Promise.resolve({}),
   })
 ) as jest.Mock;
 
@@ -49,4 +49,4 @@ describe("src/components/templates/Chat/Chat.test.tsx", () => {
     const { getByRole } = render(<Chat />);
     expect(getByRole("log", { name: "チャットメッセージ" })).toBeInTheDocument();
   });
-}); 
+});

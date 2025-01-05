@@ -1,18 +1,13 @@
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
 type TextBoxProps = {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   className?: string;
-}
+};
 
-export const TextBox = ({
-  value,
-  onChange,
-  placeholder = '',
-  className = ''
-}: TextBoxProps) => {
+export const TextBox = ({ value, onChange, placeholder = "", className = "" }: TextBoxProps) => {
   return (
     <input
       type="text"
@@ -24,4 +19,4 @@ export const TextBox = ({
       className={`${styles.module} ${className}`}
     />
   );
-}; 
+};

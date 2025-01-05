@@ -12,11 +12,11 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
-    files: ['src/tests/**/*.ts', 'src/tests/**/*.tsx'],
+    files: ["src/tests/**/*.ts", "src/tests/**/*.tsx"],
     rules: {
-      '@typescript-eslint/no-namespace': 'off'
-    }
-  }
+      "@typescript-eslint/no-namespace": "off",
+    },
+  },
 ];
 
 export default eslintConfig;

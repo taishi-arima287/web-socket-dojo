@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { composeStory } from '@storybook/react';
-import type { Meta } from '@storybook/react';
+import { composeStory } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import * as stories from "./MessageContainer.stories";
 
 const meta = stories.default as Meta;
@@ -25,4 +25,4 @@ describe("src/components/molecules/MessageContainer/MessageContainer.test.tsx", 
     expect(messages[0]).toHaveTextContent("こんにちは");
     expect(messages[1]).toHaveTextContent("お元気ですか？");
   });
-}); 
+});

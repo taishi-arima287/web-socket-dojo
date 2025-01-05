@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { composeStory } from '@storybook/react';
-import type { Meta } from '@storybook/react';
+import { composeStory } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import * as stories from "./Button.stories";
 
 const meta = stories.default as Meta;

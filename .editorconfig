@@ -1,0 +1,40 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# トップレベルの設定ファイルであることを示す
+root = true
+
+# すべてのファイルに適用
+[*]
+# 文字コード
+charset = utf-8
+# インデントスタイル
+indent_style = space
+# インデントサイズ
+indent_size = 2
+# 改行コード
+end_of_line = lf
+# ファイル末尾に空行を追加
+insert_final_newline = true
+# 行末の空白を削除
+trim_trailing_whitespace = true
+
+# Markdownファイルの設定
+[*.md]
+# Markdownでは行末の空白が意味を持つため、削除しない
+trim_trailing_whitespace = false
+
+# TypeScript/JavaScriptファイルの設定
+[*.{ts,tsx,js,jsx}]
+quote_type = double
+
+# CSSファイルの設定
+[*.{css,scss}]
+indent_size = 2
+
+# JSONファイルの設定
+[*.json]
+indent_size = 2
+
+# YAMLファイルの設定
+[*.{yml,yaml}]
+indent_size = 2

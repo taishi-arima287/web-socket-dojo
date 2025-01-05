@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import { composeStory } from '@storybook/react';
-import type { Meta } from '@storybook/react';
+import { composeStory } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import * as stories from "./TextBox.stories";
 
 const meta = stories.default as Meta;
@@ -25,4 +25,4 @@ describe("src/components/atoms/TextBox/TextBox.test.tsx", () => {
     const { getByRole } = render(<WithValue />);
     expect(getByRole("textbox", options)).toHaveValue("テストメッセージ");
   });
-}); 
+});

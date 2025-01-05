@@ -1,18 +1,13 @@
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
 type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
-}
+};
 
-export const Button = ({ 
-  children, 
-  onClick, 
-  disabled = false,
-  className = ''
-}: ButtonProps) => {
+export const Button = ({ children, onClick, disabled = false, className = "" }: ButtonProps) => {
   return (
     <button
       role="button"
@@ -23,4 +18,4 @@ export const Button = ({
       {children}
     </button>
   );
-}; 
+};

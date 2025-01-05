@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import React from 'react';
+import React from "react";
 
 const preview: Preview = {
   parameters: {
@@ -12,12 +12,12 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => (
-      <div style={{ margin: '2em' }}>
+    Story => (
+      <div style={{ margin: "2em" }}>
         <Story />
       </div>
     ),
   ],
 };
 
-export default preview; 
+export default preview;

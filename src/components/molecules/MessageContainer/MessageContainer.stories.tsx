@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { MessageContainer } from './MessageContainer';
+import type { Meta, StoryObj } from "@storybook/react";
+import { MessageContainer } from "./MessageContainer";
 
 const meta = {
-  title: 'Components/MessageContainer',
+  title: "Components/MessageContainer",
   component: MessageContainer,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof MessageContainer>;
 
 export default meta;
@@ -17,7 +17,7 @@ export const Default: Story = {
   args: {
     messages: [
       { id: 1, content: "こんにちは" },
-      { id: 2, content: "お元気ですか？" }
-    ]
+      { id: 2, content: "お元気ですか？" },
+    ],
   },
-}; 
+};

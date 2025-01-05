@@ -1,1 +1,1 @@
-export * from './MessageContainer' 
+export * from "./MessageContainer";

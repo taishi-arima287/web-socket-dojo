@@ -1,5 +1,5 @@
 import { getRoles } from "@testing-library/react";
-import { expect } from '@jest/globals';
+import { expect } from "@jest/globals";
 
 type CustomMatcherResult = {
   pass: boolean;
@@ -46,19 +46,19 @@ const windowRoles = ["alertdialog", "dialog"];
 const ignoresRoles = ["generic", "presentation"];
 
 function includeGroupRole(keys: string[]) {
-  return keys.map((key) => groupRoles.includes(key)).some(Boolean);
+  return keys.map(key => groupRoles.includes(key)).some(Boolean);
 }
 
 function includeMaybeLandmarkRole(keys: string[]) {
-  return keys.map((key) => maybeLandmarkRoles.includes(key)).some(Boolean);
+  return keys.map(key => maybeLandmarkRoles.includes(key)).some(Boolean);
 }
 
 function includeLandmarkRole(keys: string[]) {
-  return keys.map((key) => landmarkRoles.includes(key)).some(Boolean);
+  return keys.map(key => landmarkRoles.includes(key)).some(Boolean);
 }
 
 function includeWindowRole(keys: string[]) {
-  return keys.map((key) => windowRoles.includes(key)).some(Boolean);
+  return keys.map(key => windowRoles.includes(key)).some(Boolean);
 }
 
 function includeMainRole(keys: string[]) {
@@ -66,9 +66,7 @@ function includeMainRole(keys: string[]) {
 }
 
 function getRoleKeys(container: HTMLElement) {
-  return Object.keys(getRoles(container)).filter(
-    (key) => !ignoresRoles.includes(key)
-  );
+  return Object.keys(getRoles(container)).filter(key => !ignoresRoles.includes(key));
 }
 
 function fail(message: string) {
@@ -86,11 +84,7 @@ function toBeAtom(container: HTMLElement): CustomMatcherResult {
   if (includeWindowRole(keys)) {
     return fail("Atom should not include window role.");
   }
-  if (
-    includeLandmarkRole(keys) ||
-    includeMaybeLandmarkRole(keys) ||
-    includeMainRole(keys)
-  ) {
+  if (includeLandmarkRole(keys) || includeMaybeLandmarkRole(keys) || includeMainRole(keys)) {
     return fail("Atom should not include landmark role.");
   }
   return { pass: true, message: () => "it Atom" };
@@ -118,13 +112,7 @@ function toBeOrganism(container: HTMLElement): CustomMatcherResult {
   if (!(keys.length >= 2)) {
     return fail("Organism should structed by multiple role.");
   }
-  if (
-    !(
-      includeLandmarkRole(keys) ||
-      includeMaybeLandmarkRole(keys) ||
-      includeWindowRole(keys)
-    )
-  ) {
+  if (!(includeLandmarkRole(keys) || includeMaybeLandmarkRole(keys) || includeWindowRole(keys))) {
     return fail("Organism should structed by landmark or window role.");
   }
   if (includeMainRole(keys)) {
