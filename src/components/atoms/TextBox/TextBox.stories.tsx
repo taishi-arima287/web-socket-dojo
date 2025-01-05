@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { TextBox } from "./TextBox";
 
 const meta = {
-  title: "Components/TextBox",
+  title: "Components/Atoms/TextBox",
   component: TextBox,
   parameters: {
     layout: "centered",

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { MessageContainer } from "./MessageContainer";
 
 const meta = {
-  title: "Components/MessageContainer",
+  title: "Components/molecules/MessageContainer",
   component: MessageContainer,
   parameters: {
     layout: "centered",

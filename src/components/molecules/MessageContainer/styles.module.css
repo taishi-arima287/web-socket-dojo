@@ -8,6 +8,7 @@
   background-color: #f9fafb;
   scrollbar-width: thin;
   scrollbar-color: #1d6cff #f3f4f6;
+  min-width: 620px;
 }
 
 .container::-webkit-scrollbar {

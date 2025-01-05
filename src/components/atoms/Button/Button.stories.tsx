@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
 
 const meta = {
-  title: "Components/Button",
+  title: "Components/Atoms/Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -16,14 +16,12 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   args: {
     children: "送信する",
-    onClick: () => {},
   },
 };
 
 export const Disabled: Story = {
   args: {
     children: "送信する",
-    onClick: () => {},
     disabled: true,
   },
 };
