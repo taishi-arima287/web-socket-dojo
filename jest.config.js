@@ -1,3 +1,4 @@
+/** @type {import('jest').Config} */
 module.exports = {
   setupFilesAfterEnv: ["<rootDir>/src/tests/jest.customMatchers.ts", "@testing-library/jest-dom"],
   testEnvironment: "jsdom",
@@ -8,6 +9,7 @@ module.exports = {
     "^@/(.*)$": "<rootDir>/src/$1",
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
-  transformIgnorePatterns: ["/node_modules/(?!(@storybook/.*)/)"],
+  transformIgnorePatterns: ["/node_modules/(?!(@storybook/.*|@babel/.*)/)/"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
 };
